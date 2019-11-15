@@ -20,7 +20,8 @@ const App = () => {
       <SavedList list={savedList} />
       <Route exact path="/" component={MovieList} />
       <Route path="/movies/:id" render={props => { return <Movie {...props} addToSavedList={addToSavedList} />; }} />
-      <Route path="/movies/:id" component={UpdateMovieForm} />
+      <Route path="/movies/:id" render={(props) => { return <UpdateMovieForm {...props} /> }} />
+      {/* <Route path="/movies/:id" component={UpdateMovieForm} /> */}
     </>
   );
 };
